@@ -1,0 +1,298 @@
+:root {
+    --ff-body: "Nunito Sans", sans-serif;
+
+    --clr-blue-700: hsl(209, 23%, 22%);
+    --clr-blue-800: hsl(207, 26%, 17%);
+    --clr-blue-900: hsl(200, 15%, 8%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(0, 0%, 98%);
+    --clr-neutral-500: hsl(0, 0%, 52%);
+
+    --fs-400: 1rem;
+
+    --fs-body: 1rem;
+
+    --fw-light: 300;
+    --fw-semibold: 600;
+    --fw-extrabold: 800;
+
+    --border-radius: 0.25rem;
+}
+
+html[data-theme="light"] {
+    --bg-body: var(--clr-neutral-200);
+    --clr-body: var(--clr-blue-900);
+    --clr-element: var(--clr-neutral-100);
+}
+
+html[data-theme="dark"] {
+    --bg-body: var(--clr-blue-800);
+    --clr-body: var(--clr-neutral-100);
+    --clr-element: var(--clr-blue-700);
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    background-color: var(--bg-body);
+    color: var(--clr-body);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+button {
+    border: thin solid var(--clr-element);
+    outline: none;
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    border-radius: var(--border-radius);
+    color: var(--clr-body);
+    background-color: var(--clr-element);
+}
+
+.container {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+}
+
+.d-flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.header {
+    background-color: var(--clr-element);
+    padding-block: 1rem;
+}
+
+.header--logo {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-extrabold);
+}
+
+.header--btn {
+    font-size: var(--fs-body);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0;
+}
+
+.header--btn span:first-child {
+    font-size: 80%;
+}
+
+.countries {
+    padding-block: 2rem;
+}
+
+.countries--option {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 45em) {
+    .countries--option {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.countries--search {
+    background-color: var(--clr-element);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+}
+
+.countries--search label {
+    cursor: pointer;
+    line-height: 1;
+}
+
+.countries--search input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: inherit;
+    font-size: 0.875rem;
+    font-weight: var(--fw-semibold);
+}
+
+@media (min-width: 45em) {
+    .countries--search input {
+        width: 20rem;
+    }
+}
+
+.countries--region {
+    position: relative;
+    width: max-content;
+}
+
+#countriesFilterBtn {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 1rem;
+    width: 15rem;
+    font-size: 0.875rem;
+    font-weight: var(--fw-extrabold);
+}
+
+.countries--select {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-radius: var(--border-radius);
+    transform: translateY(0.25rem);
+    background-color: var(--clr-element);
+    transform-origin: top;
+    transition: transform 350ms ease;
+}
+
+.countries--region[data-expand="false"] .countries--select {
+    transform: translateY(-0.25rem) scaleY(0);
+}
+
+.countries--region[data-expand="true"] .countries--select {
+    transform: translateY(0.25rem) scaleY(1);
+}
+
+.countries--select li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: var(--fw-extrabold);
+}
+
+.countries--list {
+    padding-block: 2rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.country--box {
+    border-radius: calc(var(--border-radius) * 2);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 350ms ease;
+}
+
+.country--box:hover {
+    transform: translateY(-1rem);
+}
+
+.country--image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.country--content {
+    padding: 2rem 1rem;
+    background-color: var(--clr-element);
+    flex-grow: 1;
+}
+
+.country--content > * {
+    text-transform: capitalize;
+}
+
+.country--name {
+    font-weight: var(--fw-extrabold);
+    margin-bottom: 0.5rem;
+}
+
+.country--content p {
+    font-size: 0.875rem;
+}
+
+.country--content p span {
+    font-weight: var(--fw-extrabold);
+}

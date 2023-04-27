@@ -1,0 +1,15 @@
+@use "../abstract" as *;
+
+/* Font-size */
+@for $i from 3 through 8 {
+    .fs-#{$i * 100} {
+        font-size: var(--fs-#{$i * 100});
+    }
+}
+
+/* Font-weight */
+@each $prop, $value in $font-weights {
+    .fw-#{$prop} {
+        font-weight: var(--fw-#{$prop});
+    }
+}

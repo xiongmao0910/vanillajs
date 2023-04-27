@@ -1,0 +1,9 @@
+/* Grid */
+.d-grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.grid-center {
+    place-items: center;
+}

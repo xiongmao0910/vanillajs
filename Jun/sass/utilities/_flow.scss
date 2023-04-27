@@ -1,0 +1,4 @@
+/* Flow */
+.flow > * + * {
+    margin-top: var(--flow-spacer, 0.75em);
+}

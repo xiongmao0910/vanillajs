@@ -1,0 +1,30 @@
+@use "../abstract" as *;
+
+/* Colors */
+.text-white {
+    color: var(--clr-white) !important;
+}
+
+.bg-white {
+    background-color: var(--clr-white) !important;
+}
+
+.text-black {
+    color: var(--clr-black) !important;
+}
+
+.bg-black {
+    background-color: var(--clr-black) !important;
+}
+
+@each $color, $shade in $colors {
+    @each $prop, $value in $shade {
+        .text-#{$color}-#{$prop} {
+            color: var(--clr-#{$color}-#{$prop}) !important;
+        }
+
+        .bg-#{$color}-#{$prop} {
+            background-color: var(--clr-#{$color}-#{$prop}) !important;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@use "../abstract" as *;
+/* Header */
+.header {
+    &--container {
+        padding-block: 2rem;
+        flex-direction: column;
+
+        @include mq(small) {
+            flex-direction: row;
+        }
+    }
+
+    &--top,
+    &--nav {
+        width: 100%;
+
+        @include mq(small) {
+            width: unset;
+        }
+    }
+
+    &--bar {
+        background-color: transparent;
+        font-size: var(--fs-500);
+
+        @include mq(small) {
+            display: none;
+        }
+    }
+
+    &--nav {
+        overflow: hidden;
+        transition: max-height 350ms ease;
+
+        &[data-visible="false"] {
+            max-height: 0;
+        }
+
+        &[data-visible="true"] {
+            max-height: 50vh;
+        }
+
+        @include mq(small) {
+            &[data-visible] {
+                max-height: unset;
+            }
+        }
+
+        .menu {
+            padding-block: 1rem;
+            flex-direction: column;
+
+            @include mq(small) {
+                flex-direction: row;
+            }
+        }
+    }
+}

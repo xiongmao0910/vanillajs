@@ -1,0 +1,17 @@
+/* Menu */
+.menu {
+    --gap: 2rem;
+
+    &--link {
+        font-family: var(--ff-nav);
+        font-size: var(--fs-nav);
+        font-weight: var(--fw-nav);
+        color: var(--clr-nav);
+        transition: color 350ms ease;
+
+        &:hover,
+        &.active {
+            color: var(--clr-primary-300);
+        }
+    }
+}

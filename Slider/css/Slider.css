@@ -1,0 +1,48 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider--list {
+    height: 100%;
+    display: flex;
+    transition: all 500ms ease;
+}
+
+.slider--item {
+    width: 100%;
+}
+
+.slider--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:is(#sliderPrev, #sliderNext) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5em;
+    background-color: #000000a4;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 400ms ease;
+    opacity: 0.4;
+    border: none;
+    outline: none;
+    z-index: 100;
+}
+
+:is(#sliderPrev, #sliderNext):hover {
+    opacity: 1;
+}
+
+#sliderPrev {
+    left: 0;
+}
+
+#sliderNext {
+    right: 0;
+}

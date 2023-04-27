@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jun</title>
+
+        <!-- GOOGLE FONTS CDN -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="../assets/css/styles.css" />
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header class="header">
+            <div
+                class="header--container container d-flex justify-content-between align-items-center"
+            >
+                <div
+                    class="header--top d-flex justify-content-between align-items-center"
+                >
+                    <a href="../">
+                        <img
+                            srcset="../assets/img/Logo.png 2x"
+                            class="header--logo"
+                        />
+                    </a>
+                    <button
+                        class="header--bar"
+                        id="navToggle"
+                        aria-controls="headerNav"
+                    >
+                        <ion-icon name="menu"></ion-icon>
+                    </button>
+                </div>
+
+                <nav class="header--nav" id="headerNav" data-visible="false">
+                    <ul role="menu" class="menu d-flex">
+                        <li class="menu--item">
+                            <a href="#!" class="menu--link text-uppercase">
+                                about
+                            </a>
+                        </li>
+                        <li class="menu--item">
+                            <a href="#!" class="menu--link text-uppercase">
+                                work
+                            </a>
+                        </li>
+                        <li class="menu--item">
+                            <a href="#!" class="menu--link text-uppercase">
+                                blog
+                            </a>
+                        </li>
+                        <li class="menu--item">
+                            <a href="#!" class="menu--link text-uppercase">
+                                contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <h1>About page</h1>
+        </main>
+
+        <!-- ION ICON CDN -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <!-- CUSTOM JS -->
+        <script type="module" src="../assets/js/app.js"></script>
+    </body>
+</html>

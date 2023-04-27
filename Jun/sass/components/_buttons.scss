@@ -1,0 +1,45 @@
+/**
+* COMPONENTS CSS
+*/
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    gap: var(--gap, 0.25em);
+    font-family: var(--ff-btn);
+    font-size: var(--fs-btn);
+    font-weight: var(--fw-btn);
+    padding: 0.5em 1em;
+    background-color: var(--bg);
+    color: var(--clr);
+    border: thin solid;
+    border-radius: var(--br, 0.25em);
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 350ms ease;
+
+    &--primary {
+        &[type="contained"] {
+            --bg: var(--clr-primary-400);
+            --clr: var(--clr-white);
+            border-color: var(--bg);
+
+            &:hover,
+            &:active {
+                --bg: var(--clr-primary-300);
+            }
+        }
+
+        &[type="outlined"] {
+            --bg: transparent;
+            --clr: var(--clr-primary-400);
+            border-color: var(--clr-primary-400);
+
+            &:hover,
+            &:active {
+                --bg: var(--clr-primary-400);
+                --clr: var(--clr-white);
+            }
+        }
+    }
+}

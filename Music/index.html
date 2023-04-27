@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Music</title>
+
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Icons"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <main>
+            <section class="music">
+                <div class="music--container flow">
+                    <div class="music--header">
+                        <h3 class="text-center">now playing</h3>
+                    </div>
+
+                    <div class="music--card">
+                        <div class="music--cd" data-spin="false">
+                            <img
+                                src="https://i.ytimg.com/vi/ek4flr65xF4/maxresdefault.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <h2 class="music--name text-center"></h2>
+                        <p class="music--artist text-center"></p>
+                        <div class="music--seek">
+                            <div class="music--seek__time">
+                                <small id="musicCurrentTime"></small>
+                                <small id="musicDuration"></small>
+                            </div>
+                            <div class="music--progress" id="musicBar">
+                                <input
+                                    type="range"
+                                    value="0"
+                                    class="music--seek__bar"
+                                    id="musicProgress"
+                                />
+                            </div>
+                        </div>
+                        <div class="music--btns">
+                            <button class="music--btn" id="openListBtn">
+                                <span class="material-icons">
+                                    queue_music
+                                </span>
+                            </button>
+                            <button class="music--btn" id="musicPrevBtn">
+                                <span class="material-icons">
+                                    chevron_left
+                                </span>
+                            </button>
+                            <button class="music--btn" id="musicPlayBtn">
+                                <span class="material-icons"> play_arrow </span>
+                            </button>
+                            <button class="music--btn" id="musicNextBtn">
+                                <span class="material-icons">
+                                    chevron_right
+                                </span>
+                            </button>
+                            <button
+                                class="music--btn"
+                                data-repeat="false"
+                                id="musicRepeatBtn"
+                            >
+                                <span class="material-icons"> loop </span>
+                            </button>
+                        </div>
+                        <audio src="" id="musicAudio"></audio>
+                    </div>
+
+                    <div
+                        class="music--playlist"
+                        id="musicPlaylist"
+                        data-show="false"
+                    >
+                        <button class="music--btn" id="closeListBtn">
+                            <span class="material-icons"> close </span>
+                        </button>
+                        <div class="music--list"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./assets/js/app.js"></script>
+    </body>
+</html>

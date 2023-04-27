@@ -1,0 +1,41 @@
+@use "../abstract" as *;
+
+/* Home */
+.home {
+    padding-block: var(--section-padding);
+
+    &--container {
+        --gap: 4rem;
+        flex-direction: column;
+
+        @include mq(small) {
+            flex-direction: row;
+        }
+    }
+
+    &--image {
+        img {
+            width: 15rem;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 67% 33% 48% 52% / 44% 45% 55% 56%;
+
+            @include mq(small) {
+                width: 20rem;
+            }
+        }
+    }
+
+    &--content {
+        --flow-spacer: 0.85rem;
+    }
+
+    #writer {
+        font-weight: var(--fw-medium);
+        color: var(--clr-primary-400);
+    }
+
+    &--btns {
+        --gap: 1rem;
+    }
+}

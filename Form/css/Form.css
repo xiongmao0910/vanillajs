@@ -1,0 +1,70 @@
+.form {
+    --fs-form: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.form h1 {
+    text-align: center;
+}
+
+.form--group {
+    position: relative;
+    width: 100%;
+}
+
+.form--input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.form--label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+
+    text-transform: capitalize;
+    font-size: var(--fs-form);
+    color: rgba(0, 0, 0, 0.5);
+    cursor: text;
+    transition: all 400ms ease;
+    z-index: 1;
+}
+
+.form--input:focus + .form--label,
+.form--input:not(:placeholder-shown) + .form--label {
+    padding-inline: 0.5rem;
+    transform: translate(-0.5rem, -2rem);
+    background-color: white;
+    color: rgba(0, 0, 0, 1);
+}
+
+.form--notification {
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+    font-size: var(--fs-form);
+}
+
+.form--error {
+    color: #ff0000;
+}
+
+.form--btn {
+    outline: none;
+    border-radius: 0.25em;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 350ms ease;
+}
+
+.form--btn:hover {
+    background-color: rgba(0, 0, 0, 1);
+}

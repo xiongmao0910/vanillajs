@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Validation App</title>
+
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/Form.css" />
+    </head>
+    <body>
+        <form class="form" autocomplete="off">
+            <h1>Sign up form</h1>
+            <div class="form--group">
+                <input
+                    type="text"
+                    class="form--input"
+                    id="firstName"
+                    placeholder=" "
+                    aria-errormessage="What's your first name?"
+                />
+                <label for="firstName" class="form--label">first name</label>
+            </div>
+            <div class="form--group">
+                <input
+                    type="text"
+                    class="form--input"
+                    id="lastName"
+                    placeholder=" "
+                    aria-errormessage="What's your last name?"
+                />
+                <label for="lastName" class="form--label">last name</label>
+            </div>
+            <div class="form--group">
+                <input
+                    type="email"
+                    class="form--input"
+                    id="email"
+                    placeholder=" "
+                    aria-errormessage="You'll use this when you log in!"
+                />
+                <label for="email" class="form--label">email</label>
+            </div>
+            <div class="form--group">
+                <input
+                    type="password"
+                    class="form--input"
+                    id="password"
+                    placeholder=" "
+                    aria-errormessage="You need to set your password!"
+                />
+                <label for="password" class="form--label">password</label>
+            </div>
+            <button class="form--btn">Sign up</button>
+        </form>
+
+        <script src="./js/components/Form.js"></script>
+        <script src="./js/app.js"></script>
+    </body>
+</html>

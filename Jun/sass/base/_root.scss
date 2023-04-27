@@ -1,0 +1,58 @@
+@use "../abstract" as *;
+/**
+* CUSTOM PROPERTIES
+*/
+:root {
+    /* Spacing props */
+    --section-padding: 3.5rem;
+    @include mq(small) {
+        --section-padding: 7rem;
+    }
+
+    /* Color props */
+    --clr-white: hsl(0, 100%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+
+    @each $color, $shade in $colors {
+        @each $prop, $value in $shade {
+            --clr-#{$color}-#{$prop}: #{$value};
+        }
+    }
+
+    --clr-nav: var(--clr-neutral-600);
+
+    /* Font-family props */
+    --ff-sans: "Poppins", sans-serif;
+
+    --ff-body: var(--ff-sans);
+    --ff-nav: var(--ff-sans);
+    --ff-btn: var(--ff-sans);
+
+    /* Font-size props */
+    @each $screen-size, $property in $type-scale {
+        @if $screen-size == small {
+            @each $prop, $value in $property {
+                --fs-#{$prop}: #{$value};
+            }
+        } @else {
+            @include mq(small) {
+                @each $prop, $value in $property {
+                    --fs-#{$prop}: #{$value};
+                }
+            }
+        }
+    }
+
+    --fs-body: var(--fs-300);
+    --fs-nav: var(--fs-300);
+    --fs-btn: var(--fs-300);
+
+    /* Font-weight props */
+    @each $prop, $value in $font-weights {
+        --fw-#{$prop}: #{$value};
+    }
+
+    --fw-body: var(--fw-regular);
+    --fw-nav: var(--fw-semibold);
+    --fw-btn: var(--fw-medium);
+}

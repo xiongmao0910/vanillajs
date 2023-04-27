@@ -1,0 +1,66 @@
+/**
+* BASE CSS
+*/
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-body);
+    letter-spacing: -0.5px;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.6;
+}
+
+ul,
+ol,
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img,
+picture,
+video,
+svg,
+canvas {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+[hidden] {
+    display: none;
+}
